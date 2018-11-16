@@ -4,11 +4,11 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 ##URL The site can be accessed on the following URL:
 
-https://the-e-word.herokuapp.com/
+https://jolly-pike-d13740.netlify.com/
 
 ##API
 
-The website fetches data from the following API: https://nc-news-emma.herokuapp.com/api
+The website fetches data from the following API: https://github.com/hannah-reeson/nc-news-frontend
 
 ##Getting Started
 

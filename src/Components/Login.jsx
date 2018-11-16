@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Article.css";
 import "./Profile.css";
+import Home from "../Assets/home.png";
 
 class Login extends Component {
   state = {
@@ -13,6 +14,8 @@ class Login extends Component {
       children
     ) : (
       <form className="Login" onSubmit={this.handleSubmit}>
+        <img className="avatar" src={Home} alt="Ponies" />
+        <br />
         <label htmlFor="username">Username</label>
         <br />
         <br />

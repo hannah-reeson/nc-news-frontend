@@ -1,0 +1,102 @@
+.Articlegrid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+.ArticleTitle {
+  color: rgb(153, 43, 226);
+}
+h2 {
+  color: deepskyblue;
+  text-shadow: 2px 2px rgba(0, 191, 255, 0.274);
+}
+.Article {
+  border-style: inset;
+  background-color: rgb(255, 218, 224);
+  border-radius: 12px;
+  border-color: rgb(255, 218, 224);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin: 1em;
+}
+.ArticleBody {
+  margin: 1em;
+  text-decoration-line: none;
+}
+.CommentTitile {
+  color: rgb(153, 43, 226);
+}
+
+.Comments {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  overflow-y: scroll;
+  width: 500px;
+  height: 450px;
+  background-color: rgb(255, 218, 224);
+  margin: 2em;
+  border-radius: 15px;
+}
+.Likes {
+  color: deepskyblue;
+}
+.Scroll {
+  background-color: rgb(255, 218, 224);
+  border: #fd6cea;
+  margin-left: 30px;
+  float: left;
+  height: 400px;
+  width: 570px;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+.AddComment {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.CommentBox {
+  background-color: rgb(255, 253, 122);
+  color: fuchsia;
+}
+.ComNum {
+  color: coral;
+}
+select {
+  background-color: rgb(255, 253, 122);
+  border-radius: 12px;
+  color: fuchsia;
+  font-size: medium;
+  border-style: outset;
+}
+textarea {
+  background-color: rgb(255, 218, 224);
+  border-radius: 12px;
+  font-size: small;
+  color: rgb(250, 98, 230);
+  border-style: inset;
+  border-color: rgb(255, 218, 224);
+  border-width: 0.15em;
+}
+
+.add {
+  background-color: rgb(255, 253, 122);
+  border-style: outset;
+  color: fuchsia;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(94, 169, 255);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(252, 170, 255);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fd6cea;
+}

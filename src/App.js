@@ -1,28 +1,67 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Router } from "@reach/router";
+import "./App.css";
+import Home from "./Components/Home";
+import Articles from "./Components/Articles";
+import Article from "./Components/Article";
+import Login from "./Components/Login";
+import * as api from "./api";
+import Nav from "./Components/Nav";
+import Profile from "./Components/Profile";
+import Errors from "./Components/Errors";
 
 class App extends Component {
+  state = {
+    user: null,
+    error: null
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header className="Header">
+          <h1>NC NEWS</h1>
         </header>
+        <Login
+          login={this.login}
+          user={this.state.user}
+          error={this.state.error}
+        >
+          <Nav user={this.state.user} />
+          <Router className="Router" primary={false}>
+            <Home path="/" />
+            <Articles path="/articles" user={this.state.user} />
+            <Article path="/articles/:article_id" user={this.state.user} />
+            <Articles path="/articles/topic/:topic" />
+            <Profile
+              path="/user/:user_id"
+              user={this.state.user}
+              logout={this.logout}
+            />
+            <Errors path="/error" />
+          </Router>
+        </Login>
       </div>
     );
   }
+  login = username => {
+    api
+      .getUser(username)
+      .then(user => {
+        sessionStorage.setItem("username", JSON.stringify(user));
+        this.setState({
+          user,
+          error: null
+        });
+      })
+      .catch(error => {
+        this.setState({});
+      });
+  };
+  logout = () => {
+    this.setState({
+      user: null
+    });
+  };
 }
 
 export default App;

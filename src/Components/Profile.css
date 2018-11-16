@@ -1,0 +1,22 @@
+.Login {
+  grid-row-start: 2;
+}
+input {
+  background-color: rgb(255, 218, 224);
+  border-radius: 12px;
+  font-size: medium;
+  color: darkmagenta;
+}
+.name {
+  color: rgb(204, 95, 255);
+}
+
+.user {
+  color: deepskyblue;
+  text-shadow: 2px 2px rgba(1, 73, 97, 0.836);
+}
+
+.avatar {
+  height: 300px;
+  width: auto;
+}

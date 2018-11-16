@@ -1,0 +1,39 @@
+a.class1:link {
+  color: rgb(168, 2, 127);
+}
+a.class1:visited {
+  color: rgb(243, 137, 137);
+}
+a.class1:hover {
+  font-size: large;
+  color: rgb(129, 142, 255);
+}
+
+a.class1:active {
+  font-size: large;
+  color: rgb(9, 177, 255);
+}
+
+a.class2:link {
+  color: rgb(255, 180, 236);
+}
+a.class2:visited {
+  color: rgb(253, 109, 217);
+}
+a.class2:hover {
+  font-size: large;
+  color: rgb(151, 166, 253);
+}
+
+a.class2:active {
+  font-size: large;
+  color: rgb(9, 177, 255);
+}
+
+.NavAv {
+  height: 70px;
+  width: auto;
+  position: absolute;
+  top: 30px;
+  right: 90px;
+}

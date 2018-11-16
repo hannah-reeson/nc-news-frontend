@@ -1,0 +1,9 @@
+button:disabled {
+  background-color: lightskyblue;
+}
+
+button {
+  background-color: rgb(255, 253, 122);
+  border-style: outset;
+  color: fuchsia;
+}

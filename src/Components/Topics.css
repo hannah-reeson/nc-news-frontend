@@ -1,0 +1,23 @@
+.Topicgrid {
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.Footballbutton {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.Cookingbutton {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.Codingbutton {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.Articlesbutton {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}

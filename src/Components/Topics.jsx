@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
-import FootballImg from "../Assets/football.png";
-import CookingImg from "../Assets/cooking.png";
-import CodingImg from "../Assets/coding.png";
-import ArticlesImg from "../Assets/articles.png";
+import footballImg from "../Assets/football.png";
+import cookingImg from "../Assets/cooking.png";
+import codingImg from "../Assets/coding.png";
+import articlesImg from "../Assets/articles.png";
 import "./Topics.css";
 
 const Topics = props => {
@@ -13,13 +13,7 @@ const Topics = props => {
         <h2>Coding</h2>
         <Link to="/articles/topic/coding">
           {" "}
-          <img
-            className="Codingbutton"
-            src={CodingImg}
-            alt="Coding"
-            width="350"
-            height="300"
-          />
+          <img className="Codingbutton" src={codingImg} alt="Coding" />
         </Link>
       </div>
 
@@ -29,10 +23,8 @@ const Topics = props => {
           {" "}
           <img
             className="Footballbutton"
-            src={FootballImg}
+            src={footballImg}
             alt="Football"
-            width="300"
-            height="300"
           />{" "}
         </Link>
       </div>
@@ -41,13 +33,7 @@ const Topics = props => {
         <h2>Cooking</h2>
         <Link to="/articles/topic/cooking">
           {" "}
-          <img
-            className="Cookingbutton"
-            src={CookingImg}
-            alt="Cooking"
-            width="300"
-            height="300"
-          />{" "}
+          <img className="Cookingbutton" src={cookingImg} alt="Cooking" />{" "}
         </Link>
       </div>
 
@@ -57,10 +43,8 @@ const Topics = props => {
           {" "}
           <img
             className="Articlesbutton"
-            src={ArticlesImg}
+            src={articlesImg}
             alt="articles"
-            width="300"
-            height="300"
           />{" "}
         </Link>
       </div>

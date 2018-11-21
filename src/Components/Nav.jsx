@@ -7,7 +7,7 @@ class Nav extends Component {
     user: {}
   };
   render() {
-    const { avatar_url } = this.props.user;
+    const { avatar_url, username } = this.props.user;
     return (
       <div>
         <div className="HomeLink">
@@ -16,10 +16,10 @@ class Nav extends Component {
           </Link>
         </div>
         <div>
-          <Link className="class2" to="/user/:user_id">
-            <h4 className="ProfileLink">Profile</h4>
-            <img className="NavAv" alt="userImage" src={avatar_url} />
+          <Link className="class2" to={`user/${username}`}>
+            <h4 className="ProfileLink">Profile</h4>{" "}
           </Link>
+          <img className="NavAv" alt="userImage" src={avatar_url} />
         </div>
       </div>
     );

@@ -11,30 +11,22 @@ class Articles extends Component {
   render() {
     return (
       <div className="Articlegrid">
-        <span className="Article">
-          <div className="Scroll">
-            <h2>Articles</h2>
-            {this.state.articles.map(article => {
-              // console.log(article);
-              return (
-                <Link
-                  className="class1"
-                  to={`/articles/${article._id}`}
-                  key={article._id}
-                >
-                  <li
-                    key={article._id}
-                    style={{
-                      padding: 10,
-                      margin: 10
-                    }}
-                  >
-                    <div>{article.title}</div>
-                  </li>
-                </Link>
-              );
-            })}
-          </div>
+        <span className="Articles">
+        <h2>Articles</h2>
+          {this.state.articles.map(article => {
+            return (
+              <Link
+                className="class1"
+                to={`/articles/${article._id}`}
+                key={article._id}
+              >
+                <li key={article._id} className="singleComment">
+                  <div>{article.title}</div>
+                  <h6>Comments: {article.commentcount}</h6>
+                </li>
+              </Link>
+            );
+          })}
         </span>
 
         <ArticleAdder user={this.props.user} />
@@ -42,6 +34,7 @@ class Articles extends Component {
     );
   }
   componentDidMount() {
+    console.log(this.props.user, "article user");
     this.fetchArticles();
   }
 
@@ -49,7 +42,6 @@ class Articles extends Component {
     api
       .getArticles(this.props.topic)
       .then(articles => {
-        console.log(articles);
         this.setState({
           articles
         });

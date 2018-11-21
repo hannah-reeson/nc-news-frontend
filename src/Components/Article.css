@@ -1,8 +1,9 @@
 .Articlegrid {
+  align-content: start;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
+  width: 100%;
 }
 .ArticleTitle {
   color: rgb(153, 43, 226);
@@ -11,6 +12,19 @@ h2 {
   color: deepskyblue;
   text-shadow: 2px 2px rgba(0, 191, 255, 0.274);
 }
+.Articles {
+  border-style: inset;
+  background-color: rgb(255, 218, 224);
+  border-radius: 12px;
+  border-color: rgb(255, 218, 224);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  overflow-y: scroll;
+  max-height: 75vh;
+  width: 90%;
+  margin: 20px;
+}
+
 .Article {
   border-style: inset;
   background-color: rgb(255, 218, 224);
@@ -18,7 +32,10 @@ h2 {
   border-color: rgb(255, 218, 224);
   grid-column-start: 1;
   grid-column-end: 2;
-  margin: 1em;
+  /* overflow-y: scroll; */
+  width: 90%;
+  /* height: 100vh; */
+  margin: 2em;
 }
 .ArticleBody {
   margin: 1em;
@@ -29,14 +46,13 @@ h2 {
 }
 
 .Comments {
+  border-style: inset;
   grid-column-start: 2;
   grid-column-end: 2;
-  overflow-y: scroll;
-  width: 500px;
-  height: 450px;
   background-color: rgb(255, 218, 224);
   margin: 2em;
   border-radius: 15px;
+  max-height: 100vh;
 }
 .Likes {
   color: deepskyblue;
@@ -44,12 +60,11 @@ h2 {
 .Scroll {
   background-color: rgb(255, 218, 224);
   border: #fd6cea;
-  margin-left: 30px;
+  border-radius: 12px;
   float: left;
-  height: 400px;
-  width: 570px;
   overflow-y: scroll;
-  margin-bottom: 25px;
+  margin: 2px;
+  max-height: 50vh;
 }
 
 .AddComment {
@@ -99,4 +114,42 @@ textarea {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #fd6cea;
+}
+.commentAvatar {
+  height: 50px;
+}
+
+.postUser {
+  color: #fd6cea;
+}
+.singleComment {
+  border: 3px dotted rgb(190, 36, 221);
+  margin: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+  .Articlegrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    grid-gap: 5px;
+  }
+  .Articles {
+    align-content: center;
+    grid-row-start: 1;
+    max-height: 75vh;
+    width: 90%;
+  }
+  .Comments {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    width: 90%;
+    max-height: 100%;
+  }
+  .Article {
+    align-content: center;
+    grid-row-start: 1;
+    max-height: 100%;
+    width: 90%;
+  }
 }

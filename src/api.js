@@ -45,11 +45,13 @@ export const deleteComment = id => {
 };
 
 export const addArticle = async (title, belongs_to, body, user) => {
+  console.log(title, belongs_to, body, user, "!<<<<<<<<");
   return axios
     .post(`${BASE_URL}/topics/${belongs_to}/articles`, {
-      title: title,
-      body: body,
-      created_by: user
+      title,
+      body,
+      created_by: user,
+      belongs_to
     })
     .then(({ data }) => data.articles);
 };

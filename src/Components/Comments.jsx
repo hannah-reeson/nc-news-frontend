@@ -14,33 +14,49 @@ class Comments extends Component {
       <div className="Comments">
         <span>
           <h2 className="CommentTitile">Comments</h2>
-          {this.state.loading ? (
-            <h2>Loading...</h2>
-          ) : (
-            this.state.comments.map(comment => {
-              return (
-                <li key={comment._id}>
-                  {" "}
-                  <p>{comment.body}</p>
-                  <CommentDeleter
-                    commentId={comment._id}
-                    delete={this.delete}
-                  />
-                  <Votes
-                    votes={comment.votes}
-                    _id={comment._id}
-                    section={"comments"}
-                  />
-                </li>
-              );
-            })
-          )}
-          <CommentAdder
-            addComment={this.addComment}
-            comments={this.state.comments}
-            articleId={this.props.articleId}
-            user={this.props.user}
-          />
+          <ul className="Scroll">
+            {this.state.loading ? (
+              <h2>Loading...</h2>
+            ) : (
+              this.state.comments.map(comment => {
+                return (
+                  <li className="singleComment" key={comment._id}>
+                    {" "}
+                    <p>{comment.body}</p>
+                    <div>
+                      <h6 className="postUser">
+                        {" "}
+                        posted by: {comment.created_by.username}
+                      </h6>
+                      <img
+                        className="commentAvatar"
+                        src={comment.created_by.avatar_url}
+                        alt="ProfilePic"
+                      />
+                    </div>
+                    {comment.created_by.username ===
+                      this.props.user.username && (
+                      <CommentDeleter
+                        commentId={comment._id}
+                        delete={this.delete}
+                      />
+                    )}
+                    <Votes
+                      votes={comment.votes}
+                      _id={comment._id}
+                      section={"comments"}
+                    />
+                  </li>
+                );
+              })
+            )}
+            <CommentAdder
+              addComment={this.addComment}
+              comments={this.state.comments}
+              articleId={this.props.articleId}
+              user={this.props.user}
+            />
+          </ul>
         </span>
       </div>
     );

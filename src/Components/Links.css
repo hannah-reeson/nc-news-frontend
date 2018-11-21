@@ -1,7 +1,9 @@
 a.class1:link {
+  font-size: small;
   color: rgb(168, 2, 127);
 }
 a.class1:visited {
+  font-size: small;
   color: rgb(243, 137, 137);
 }
 a.class1:hover {
@@ -15,9 +17,11 @@ a.class1:active {
 }
 
 a.class2:link {
+  font-size: small;
   color: rgb(255, 180, 236);
 }
 a.class2:visited {
+  font-size: small;
   color: rgb(253, 109, 217);
 }
 a.class2:hover {
@@ -33,7 +37,5 @@ a.class2:active {
 .NavAv {
   height: 70px;
   width: auto;
-  position: absolute;
-  top: 30px;
-  right: 90px;
+  float: right;
 }

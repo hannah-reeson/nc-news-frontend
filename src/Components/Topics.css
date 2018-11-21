@@ -1,23 +1,34 @@
 .Topicgrid {
   text-align: center;
   display: grid;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .Footballbutton {
   grid-column-start: 1;
   grid-column-end: 2;
+  width: 100%;
 }
 .Cookingbutton {
   grid-column-start: 2;
   grid-column-end: 3;
+  width: 100%;
 }
 .Codingbutton {
   grid-column-start: 3;
   grid-column-end: 4;
+  width: 100%;
 }
 
 .Articlesbutton {
   grid-column-start: 4;
   grid-column-end: 5;
+  width: 100%;
+}
+@media only screen and (max-width: 500px) {
+  .Topicgrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }

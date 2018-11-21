@@ -5,7 +5,7 @@ import Home from "../Assets/home.png";
 
 class Login extends Component {
   state = {
-    username: null
+    username: ""
   };
   render() {
     if (this.props.user);

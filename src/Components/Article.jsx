@@ -17,7 +17,7 @@ class Article extends Component {
           <div className="ArticleBody">{this.state.article.body}</div>
           <Votes
             votes={this.state.article.votes}
-            _id={this.state.article.article_id}
+            _id={this.state.article._id}
             section={"articles"}
           />
         </span>

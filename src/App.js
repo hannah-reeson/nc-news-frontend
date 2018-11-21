@@ -27,16 +27,18 @@ class App extends Component {
           error={this.state.error}
         >
           <Nav user={this.state.user} />
-          <Router className="Router" primary={false}>
+          <Router primary={false}>
             <Home path="/" />
             <Articles path="/articles" user={this.state.user} />
             <Article path="/articles/:article_id" user={this.state.user} />
-            <Articles path="/articles/topic/:topic" />
-            <Profile
-              path="/user/:user_id"
-              user={this.state.user}
-              logout={this.logout}
-            />
+            <Articles path="/articles/topic/:topic" user={this.state.user} />
+            {this.state.user && (
+              <Profile
+                path={`user/:username`}
+                user={this.state.user}
+                logout={this.logout}
+              />
+            )}
             <Errors path="/error" />
           </Router>
         </Login>

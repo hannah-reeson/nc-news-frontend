@@ -17,6 +17,7 @@ class CommentAdder extends Component {
           placeholder="Post a comment..."
           onChange={this.handleChange}
           name="body"
+          required
         />
         <br />
         <br />

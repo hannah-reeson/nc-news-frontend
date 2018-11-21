@@ -25,7 +25,7 @@ class ArticleAdder extends Component {
               id="title"
               value={this.state.title}
               placeholder="Article Title"
-              onChange={this.handleChange}
+              onChange={this.handleChangeTitle}
               required
             />
 
@@ -33,7 +33,7 @@ class ArticleAdder extends Component {
               <br />
               <select
                 value={this.state.belongs_to}
-                onChange={this.handleChange2}
+                onChange={this.handleChangeTopic}
               >
                 <option>Select a Topic</option>
                 <option value="coding">Coding</option>
@@ -48,7 +48,7 @@ class ArticleAdder extends Component {
               cols="50"
               name="comment"
               id="comment"
-              onChange={this.handleChange3}
+              onChange={this.handleChangeBody}
               placeholder="Write your article..."
               required
             />
@@ -59,31 +59,33 @@ class ArticleAdder extends Component {
       </div>
     );
   }
+
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props.user._id);
     this.addArticle(
       this.state.title,
       this.state.belongs_to,
       this.state.body,
-      this.props.user
+      this.props.user._id
     );
     this.setState({
       ArticleAdded: true
     });
   };
-  handleChange = event => {
+  handleChangeTitle = event => {
     const value = event.target.value;
     this.setState({
       title: value
     });
   };
-  handleChange2 = event => {
+  handleChangeTopic = event => {
     const value = event.target.value;
     this.setState({
       belongs_to: value
     });
   };
-  handleChange3 = event => {
+  handleChangeBody = event => {
     const value = event.target.value;
     this.setState({
       body: value

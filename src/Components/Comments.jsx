@@ -92,4 +92,9 @@ class Comments extends Component {
   };
 }
 
+// Comments.propTypes = {
+//   user: PropTypes.object.isRequired,
+//   articles:PropTypes.object.isRequired
+//   };
+
 export default Comments;

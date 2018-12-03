@@ -38,4 +38,8 @@ class Article extends Component {
   };
 }
 
+// Article.propTypes = {
+// user: PropTypes.object.isRequire
+// };
+
 export default Article;
